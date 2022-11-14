@@ -17,9 +17,22 @@ class Main {
     Immeuble monImmeuble = new Immeuble("03 rue de la paix", 50, 12);
     System.out.println(monImmeuble.toString());
 
-    Batiment[] monArrayDeBatiments = new Batiment[10];
+    Batiment[] monArrayDeBatiments = new Batiment[2];
     monArrayDeBatiments[0] = maMaison;
     monArrayDeBatiments[1] = monImmeuble;
 
+    //System.out.println(maMaison.getSurfaceHabitable());
+
+    System.out.println(surfaceHabitableTotale(monArrayDeBatiments));
+
+    System.out.println(maMaison.impot());
+  }
+
+  public static int surfaceHabitableTotale(Batiment[] tabBat){
+    int returnedValue = 0;
+    for(int i = 0 ; i < tabBat.length; i++) {
+      returnedValue += tabBat[i].getSurfaceHabitable();
+    }
+    return returnedValue;
   }
 }

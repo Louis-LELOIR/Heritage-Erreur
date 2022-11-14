@@ -16,4 +16,9 @@ public class Maison extends Batiment {
   public int getSurfaceJardin(){
     return this.surfaceJardin;
   }
+
+  public double impot(){
+    double impotCalcul = (super.tauxA * super.getSurfaceHabitable() ) + (super.tauxB * this.surfaceJardin);
+    return impotCalcul;
+  }
 }
